@@ -9,8 +9,12 @@ function validateForm() {
         mess.innerHTML = "Password Must Be At Least 8 Characters Long.";
         return false;
     } else {
-        mess.innerHTML = "Welcome!";
+        alert("Welcome!");
     }
     return true;
 }
-document.getElementById("myForm").onsubmit = function() {validateForm()};
+document.getElementById("myForm").onsubmit = function(e) {
+    if (!validateForm()) {
+        e.preventDefault();
+    }
+};
